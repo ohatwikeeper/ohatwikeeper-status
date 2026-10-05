@@ -1,0 +1,549 @@
+[
+  {
+    "id": "timeline",
+    "name": "Timeline",
+    "nameJa": "タイムライン",
+    "publicUrl": "https://timeline.ohatwikeeper.com",
+    "url": "http://localhost:3010",
+    "affectsJa": [
+      "おはツイTimeline（timeline.ohatwikeeper.com）全体"
+    ]
+  },
+  {
+    "id": "profilecard",
+    "name": "Profile Card",
+    "nameJa": "プロフィールカード",
+    "publicUrl": "https://profilecard.ohatwikeeper.com",
+    "url": "http://localhost:3064",
+    "affectsJa": [
+      "プロフィールカード（profilecard.ohatwikeeper.com）全体"
+    ]
+  },
+  {
+    "id": "main",
+    "name": "OhatwiKeeper",
+    "nameJa": "おはツイKeeper (Web)",
+    "publicUrl": "https://ohatwikeeper.com",
+    "url": "https://ohatwikeeper.com",
+    "affectsJa": [
+      "トップページを含むPHPページ全体の表示"
+    ]
+  },
+  {
+    "id": "beta",
+    "name": "OhatwiKeeper Beta",
+    "nameJa": "おはツイKeeper ベータ版",
+    "publicUrl": "https://beta.ohatwikeeper.com",
+    "url": "https://beta.ohatwikeeper.com",
+    "affectsJa": [
+      "ベータ版(beta.ohatwikeeper.com)全体の表示"
+    ],
+    "okCodes": [
+      401,
+      403
+    ]
+  },
+  {
+    "id": "beta-dashboard",
+    "parentId": "beta",
+    "name": "Dashboard",
+    "nameJa": "ダッシュボード",
+    "publicUrl": "https://beta.ohatwikeeper.com/dashboard",
+    "url": "https://beta.ohatwikeeper.com/dashboard",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "ダッシュボードページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-notification",
+    "parentId": "beta",
+    "name": "Notifications",
+    "nameJa": "通知",
+    "publicUrl": "https://beta.ohatwikeeper.com/notification",
+    "url": "https://beta.ohatwikeeper.com/notification",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "通知ページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-folder",
+    "parentId": "beta",
+    "name": "Folder",
+    "nameJa": "フォルダ",
+    "publicUrl": "https://beta.ohatwikeeper.com/folder",
+    "url": "https://beta.ohatwikeeper.com/folder",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "フォルダページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-recap",
+    "parentId": "beta",
+    "name": "Recap",
+    "nameJa": "リキャップ",
+    "publicUrl": "https://beta.ohatwikeeper.com/recap",
+    "url": "https://beta.ohatwikeeper.com/recap",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "リキャップページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-settings",
+    "parentId": "beta",
+    "name": "Settings",
+    "nameJa": "設定",
+    "publicUrl": "https://beta.ohatwikeeper.com/settings",
+    "url": "https://beta.ohatwikeeper.com/settings",
+    "okCodes": [
+      401,
+      403
+    ],
+    "extraUrls": [
+      "https://beta.ohatwikeeper.com/settings_api"
+    ],
+    "affectsJa": [
+      "設定(メール・API・Webhook等のタブ)の表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-tools",
+    "parentId": "beta",
+    "name": "Tools",
+    "nameJa": "ツール",
+    "publicUrl": "https://beta.ohatwikeeper.com/tools",
+    "url": "https://beta.ohatwikeeper.com/tools",
+    "okCodes": [
+      401,
+      403
+    ],
+    "extraUrls": [
+      "https://beta.ohatwikeeper.com/tools/get_tweeturl",
+      "https://beta.ohatwikeeper.com/tools/search_ohatwi"
+    ],
+    "affectsJa": [
+      "ツール一覧・ツイートURL取得・おはツイ検索の表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-search",
+    "parentId": "beta",
+    "name": "Search",
+    "nameJa": "検索",
+    "publicUrl": "https://beta.ohatwikeeper.com/search",
+    "url": "https://beta.ohatwikeeper.com/search",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "検索ページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-ranking",
+    "parentId": "beta",
+    "name": "Ranking",
+    "nameJa": "ランキング",
+    "publicUrl": "https://beta.ohatwikeeper.com/ranking",
+    "url": "https://beta.ohatwikeeper.com/ranking",
+    "okCodes": [
+      401,
+      403
+    ],
+    "extraUrls": [
+      "https://beta.ohatwikeeper.com/ranking/today"
+    ],
+    "affectsJa": [
+      "ランキング・今日のランキングの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-diff",
+    "parentId": "beta",
+    "name": "Diff",
+    "nameJa": "ユーザー比較",
+    "publicUrl": "https://beta.ohatwikeeper.com/diff",
+    "url": "https://beta.ohatwikeeper.com/diff",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "ユーザー比較ページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-survey",
+    "parentId": "beta",
+    "name": "Survey",
+    "nameJa": "アンケート",
+    "publicUrl": "https://beta.ohatwikeeper.com/survey",
+    "url": "https://beta.ohatwikeeper.com/survey",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "アンケートページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-howtouse",
+    "parentId": "beta",
+    "name": "How to use",
+    "nameJa": "使い方",
+    "publicUrl": "https://beta.ohatwikeeper.com/howtouse",
+    "url": "https://beta.ohatwikeeper.com/howtouse",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "使い方ページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-patchnote",
+    "parentId": "beta",
+    "name": "Patchnote",
+    "nameJa": "アップデート履歴",
+    "publicUrl": "https://beta.ohatwikeeper.com/patchnote",
+    "url": "https://beta.ohatwikeeper.com/patchnote",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "アップデート履歴ページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-extensions",
+    "parentId": "beta",
+    "name": "Extensions",
+    "nameJa": "ブラウザ拡張機能",
+    "publicUrl": "https://beta.ohatwikeeper.com/extensions/oneclick_add",
+    "url": "https://beta.ohatwikeeper.com/extensions/oneclick_add",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "ブラウザ拡張機能ページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-dev",
+    "parentId": "beta",
+    "name": "Developers",
+    "nameJa": "開発者・APIドキュメント",
+    "publicUrl": "https://beta.ohatwikeeper.com/dev",
+    "url": "https://beta.ohatwikeeper.com/dev",
+    "okCodes": [
+      401,
+      403
+    ],
+    "extraUrls": [
+      "https://beta.ohatwikeeper.com/dev/api-docs"
+    ],
+    "affectsJa": [
+      "開発者ページ・APIドキュメントの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-cli",
+    "parentId": "beta",
+    "name": "CLI",
+    "nameJa": "CLI",
+    "publicUrl": "https://beta.ohatwikeeper.com/cli",
+    "url": "https://beta.ohatwikeeper.com/cli",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "CLIページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-terminal",
+    "parentId": "beta",
+    "name": "Terminal",
+    "nameJa": "ターミナル",
+    "publicUrl": "https://beta.ohatwikeeper.com/terminal",
+    "url": "https://beta.ohatwikeeper.com/terminal",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "ターミナルページの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "beta-legal",
+    "parentId": "beta",
+    "name": "Terms",
+    "nameJa": "規約・ポリシー",
+    "publicUrl": "https://beta.ohatwikeeper.com/terms",
+    "url": "https://beta.ohatwikeeper.com/terms",
+    "okCodes": [
+      401,
+      403
+    ],
+    "extraUrls": [
+      "https://beta.ohatwikeeper.com/policy"
+    ],
+    "affectsJa": [
+      "利用規約・プライバシーポリシーの表示"
+    ],
+    "category": "page"
+  },
+  {
+    "id": "main-api",
+    "name": "API",
+    "nameJa": "おはツイKeeper (API)",
+    "publicUrl": "https://ohatwikeeper.com/api-docs",
+    "url": "https://ohatwikeeper.com/api/v2/public/health",
+    "method": "GET",
+    "pageSlug": "api",
+    "affectsJa": [
+      "拡張機能からの登録・統計取得",
+      "ダッシュボードのデータ更新",
+      "外部連携API全般"
+    ]
+  },
+  {
+    "id": "main-dashboard",
+    "parentId": "main",
+    "name": "Dashboard",
+    "nameJa": "ダッシュボード",
+    "publicUrl": "https://ohatwikeeper.com/dashboard",
+    "url": "https://ohatwikeeper.com/dashboard",
+    "affectsJa": [
+      "ダッシュボードページの表示"
+    ],
+    "requiresAuth": true
+  },
+  {
+    "id": "main-ranking",
+    "parentId": "main",
+    "name": "Ranking",
+    "nameJa": "ランキング",
+    "publicUrl": "https://ohatwikeeper.com/ranking",
+    "url": "https://ohatwikeeper.com/ranking",
+    "affectsJa": [
+      "ランキング・今日のランキングの表示"
+    ],
+    "extraUrls": [
+      "https://ohatwikeeper.com/ranking/today"
+    ]
+  },
+  {
+    "id": "main-search",
+    "parentId": "main",
+    "name": "Search",
+    "nameJa": "検索",
+    "publicUrl": "https://ohatwikeeper.com/search",
+    "url": "https://ohatwikeeper.com/search",
+    "affectsJa": [
+      "ユーザー検索ページの表示"
+    ]
+  },
+  {
+    "id": "main-howtouse",
+    "parentId": "main",
+    "name": "How to use",
+    "nameJa": "使い方",
+    "publicUrl": "https://ohatwikeeper.com/howtouse",
+    "url": "https://ohatwikeeper.com/howtouse",
+    "affectsJa": [
+      "使い方ページの表示"
+    ]
+  },
+  {
+    "id": "main-survey",
+    "parentId": "main",
+    "name": "Survey",
+    "nameJa": "アンケート",
+    "publicUrl": "https://ohatwikeeper.com/survey",
+    "url": "https://ohatwikeeper.com/survey",
+    "affectsJa": [
+      "アンケートページの表示"
+    ]
+  },
+  {
+    "id": "main-diff",
+    "parentId": "main",
+    "name": "Diff",
+    "nameJa": "ユーザー比較",
+    "publicUrl": "https://ohatwikeeper.com/diff",
+    "url": "https://ohatwikeeper.com/diff",
+    "affectsJa": [
+      "ユーザー比較ページの表示"
+    ]
+  },
+  {
+    "id": "main-patchnote",
+    "parentId": "main",
+    "name": "Patch Note",
+    "nameJa": "アップデート履歴",
+    "publicUrl": "https://ohatwikeeper.com/patchnote",
+    "url": "https://ohatwikeeper.com/patchnote",
+    "affectsJa": [
+      "アップデート履歴ページの表示"
+    ]
+  },
+  {
+    "id": "main-extensions",
+    "parentId": "main",
+    "name": "Extensions",
+    "nameJa": "ブラウザ拡張機能",
+    "publicUrl": "https://ohatwikeeper.com/extensions/oneclick_add",
+    "url": "https://ohatwikeeper.com/extensions/oneclick_add",
+    "affectsJa": [
+      "拡張機能の紹介ページの表示"
+    ]
+  },
+  {
+    "id": "main-dev",
+    "parentId": "main",
+    "name": "Developer",
+    "nameJa": "開発者について",
+    "publicUrl": "https://ohatwikeeper.com/dev",
+    "url": "https://ohatwikeeper.com/dev",
+    "affectsJa": [
+      "開発者紹介ページの表示"
+    ]
+  },
+  {
+    "id": "main-api-docs",
+    "parentId": "main",
+    "name": "API Docs",
+    "nameJa": "APIドキュメント",
+    "publicUrl": "https://ohatwikeeper.com/api-docs",
+    "url": "https://ohatwikeeper.com/api-docs",
+    "affectsJa": [
+      "APIドキュメントページの表示"
+    ]
+  },
+  {
+    "id": "main-folder",
+    "parentId": "main",
+    "name": "Folder",
+    "nameJa": "フォルダ",
+    "publicUrl": "https://ohatwikeeper.com/folder",
+    "url": "https://ohatwikeeper.com/folder",
+    "affectsJa": [
+      "フォルダページの表示（ログイン必須）"
+    ],
+    "requiresAuth": true
+  },
+  {
+    "id": "main-notification",
+    "parentId": "main",
+    "name": "Notification",
+    "nameJa": "通知",
+    "publicUrl": "https://ohatwikeeper.com/notification",
+    "url": "https://ohatwikeeper.com/notification",
+    "affectsJa": [
+      "通知ページの表示（ログイン必須）"
+    ],
+    "requiresAuth": true
+  },
+  {
+    "id": "main-settings",
+    "parentId": "main",
+    "name": "Settings",
+    "nameJa": "設定",
+    "publicUrl": "https://ohatwikeeper.com/settings",
+    "url": "https://ohatwikeeper.com/settings",
+    "affectsJa": [
+      "設定ページ・メール設定ページの表示"
+    ],
+    "requiresAuth": true,
+    "extraUrls": [
+      "https://ohatwikeeper.com/settings_email"
+    ]
+  },
+  {
+    "id": "beta-healthz",
+    "parentId": "beta",
+    "category": "system",
+    "name": "Server",
+    "nameJa": "サーバー(死活)",
+    "publicUrl": "https://beta.ohatwikeeper.com/healthz",
+    "url": "https://beta.ohatwikeeper.com/healthz",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "ベータ版サーバー自体の応答"
+    ]
+  },
+  {
+    "id": "beta-api-ranking",
+    "parentId": "beta",
+    "category": "api",
+    "name": "Ranking API",
+    "nameJa": "ランキングAPI",
+    "publicUrl": "https://beta.ohatwikeeper.com/app-api/ranking",
+    "url": "https://beta.ohatwikeeper.com/app-api/ranking",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "ランキング取得API(/app-api/ranking)"
+    ]
+  },
+  {
+    "id": "beta-api-docs",
+    "parentId": "beta",
+    "category": "api",
+    "name": "API Docs",
+    "nameJa": "APIドキュメント",
+    "publicUrl": "https://beta.ohatwikeeper.com/api-docs/openapi.json",
+    "url": "https://beta.ohatwikeeper.com/api-docs/openapi.json",
+    "okCodes": [
+      401,
+      403
+    ],
+    "affectsJa": [
+      "API仕様(OpenAPI)の配信"
+    ]
+  }
+]

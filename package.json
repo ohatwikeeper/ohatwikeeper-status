@@ -1,0 +1,37 @@
+{
+  "name": "status.ohatwikeeper.com",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:server": "tsx watch --env-file=.env server/index.ts",
+    "dev:web": "vite",
+    "build": "vite build && esbuild server/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist-server/index.js",
+    "start": "node --env-file=.env dist-server/index.js",
+    "typecheck": "tsc --noEmit -p server && tsc --noEmit -p web"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.3",
+    "clsx": "^2.1.1",
+    "hono": "^4.13.13",
+    "lucide-react": "^1.52.0",
+    "motion": "^14.0.0",
+    "mysql2": "^3.24.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2"
+  }
+}

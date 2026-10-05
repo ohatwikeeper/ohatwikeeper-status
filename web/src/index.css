@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fafafa; --card: #ffffff; --fg: #0a0a0a; --muted: #737373; --border: #e5e5e5;
+  --ok: #16a34a; --warn: #d97706; --bad: #dc2626; --none: #d4d4d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #09090b; --card: #111113; --fg: #fafafa; --muted: #a1a1aa; --border: #27272a; --ok: #22c55e; --warn: #f59e0b; --bad: #ef4444; --none: #3f3f46; }
+}
+@theme inline {
+  --color-bg: var(--bg); --color-card: var(--card); --color-fg: var(--fg); --color-muted: var(--muted); --color-line: var(--border);
+  --color-ok: var(--ok); --color-warn: var(--warn); --color-bad: var(--bad); --color-none: var(--none);
+}
+html { background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif; -webkit-font-smoothing: antialiased; }
+.tnum { font-variant-numeric: tabular-nums; }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 50%, transparent); } 100% { box-shadow: 0 0 0 8px transparent; } }
+.pulse { animation: pulse-ring 2s infinite; }
+@media (prefers-reduced-motion: reduce) { .pulse { animation: none; } }
+
+body { min-height: 100dvh; background:
+  radial-gradient(60rem 28rem at 50% -8rem, color-mix(in srgb, var(--ok) 16%, transparent), transparent 70%),
+  linear-gradient(to right, color-mix(in srgb, var(--fg) 4%, transparent) 1px, transparent 1px) 0 0 / 44px 44px,
+  linear-gradient(to bottom, color-mix(in srgb, var(--fg) 4%, transparent) 1px, transparent 1px) 0 0 / 44px 44px;
+  -webkit-mask-image: none; }
+.glass { background: color-mix(in srgb, var(--card) 78%, transparent); backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--fg) 6%, transparent) inset, 0 12px 32px -16px rgb(0 0 0 / .45); }
+.bar { transform-box: fill-box; transform-origin: bottom; animation: bar-in .5s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes bar-in { from { transform: scaleY(.15); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .bar { animation: none; } }
+
+/* Arc UI ページネーション用トークン(beta 版と同じ見た目にするため) */
+:root { --arc-foreground: var(--fg); --arc-border: var(--border); --surface: var(--card); --surface-muted: color-mix(in srgb, var(--fg) 8%, transparent);
+  --text-secondary: var(--muted); --text-xs: .75rem; --space-1: .25rem; --control-height-sm: 2rem; --radius-control: 6px;
+  --shadow-resting: 0 1px 2px rgba(0,0,0,.25); --focus-ring: var(--fg);
+  --duration-fast: 160ms; --duration-spring: 580ms; --ease-standard: cubic-bezier(.22,1,.36,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1); }
