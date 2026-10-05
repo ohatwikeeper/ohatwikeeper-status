@@ -545,5 +545,17 @@
     "affectsJa": [
       "API仕様(OpenAPI)の配信"
     ]
+  },
+  {
+    "id": "img-server",
+    "name": "Image Server",
+    "nameJa": "画像サーバー (img.ohatwikeeper.com)",
+    "publicUrl": "https://img.ohatwikeeper.com",
+    "url": "https://img.ohatwikeeper.com/av/1",
+    "method": "GET",
+    "affectsJa": [
+      "アバター・バナー画像の表示",
+      "ツイート画像のキャッシュ配信"
+    ]
   }
 ]
