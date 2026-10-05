@@ -11,7 +11,7 @@ const SERVICES = services as Service[]
 function authCookie(): string | null {
   try {
     const sid = fs.readFileSync(process.env.STATUS_SESSION_COOKIE_FILE ?? '.status_session_cookie', 'utf8').trim()
-    return sid ? `PHPSESSID=${sid}` : null
+    return sid ? `ohatwi_sid=${sid}` : null
   } catch { return null }
 }
 
