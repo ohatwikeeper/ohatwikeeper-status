@@ -92,10 +92,19 @@ export function Shell({ children }: { children: ReactNode }) {
         <nav className="flex gap-4 text-sm text-muted"><Link className="hover:text-fg" to="/incidents">障害履歴</Link><a className="hover:text-fg" href="https://ohatwikeeper.com">サイトへ</a></nav>
       </header>
       {children}
-      <footer className="mt-12 text-center text-xs text-muted">3分ごとに自動チェック・履歴はすべて保存されています</footer>
+      <footer className="mt-12 text-center text-xs text-muted">
+        3分ごとに自動チェック・履歴はすべて保存されています
+        <div className="mt-1 font-mono opacity-70">
+          Build{' '}
+          {BUILD_ID === 'dev' ? 'dev' : <a className="underline" href={`https://github.com/ohatwikeeper/ohatwikeeper-status/commit/${BUILD_ID.split('-')[1]}`} target="_blank" rel="noopener noreferrer">{BUILD_ID}</a>}
+        </div>
+      </footer>
     </div>
   )
 }
+
+declare const __BUILD_ID__: string
+const BUILD_ID = __BUILD_ID__
 
 export const Loading = () => <div className="py-24 text-center text-sm text-muted">読み込み中…</div>
 export const Failed = () => <div className="py-24 text-center text-sm text-bad">データを取得できませんでした。しばらくしてからお試しください。</div>
