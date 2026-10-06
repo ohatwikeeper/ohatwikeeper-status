@@ -20,22 +20,22 @@ function Row({ s, nested }: { s: Svc; nested?: boolean }) {
 }
 
 type CronStat = { ok: number; ng: number; skip: number; runs: number; last: string; total: number }
-const CRONS: [string, string][] = [['records', 'レコード更新(7日以内)'], ['records-today', '今日のレコード更新'], ['users', 'ユーザー情報更新']]
+const CRONS: [string, string, string][] = [['records', '直近一週間おはツイデータ更新総実行結果(毎時一回24分割)', '件'], ['records-today', '今日のおはツイデータ更新最新実行結果(10分起き)', '件'], ['users', 'ユーザー情報更新最新実行結果(毎時一回)', '人分']]
 
 function CronCard() {
   const { data } = useApi<Record<string, CronStat>>('/api/cron')
   if (!data) return null
   return (
     <Card className="mt-6 overflow-hidden">
-      <div className="border-b border-line px-4 py-3 text-sm font-medium">定期更新(直近1周分の合計)</div>
+      <div className="border-b border-line px-4 py-3 text-sm font-medium">定期更新</div>
       <ul className="divide-y divide-line">
-        {CRONS.map(([k, label]) => {
+        {CRONS.map(([k, label, unit]) => {
           const d = data[k], total = d ? d.ok + d.ng : 0
           return (
             <li key={k} className="flex items-center justify-between gap-3 px-4 py-3 text-sm">
               <span className="truncate">{label}</span>
               {d && total ? (
-                <span className="tnum shrink-0 text-muted">{d.ok.toLocaleString()} / {(d.total ?? total).toLocaleString()}件更新 <span className={d.ng ? 'font-medium text-[#e5484d]' : ''}>{d.ng.toLocaleString()}件失敗</span></span>
+                <span className="tnum shrink-0 text-muted">{d.ok.toLocaleString()} / {(d.total ?? total).toLocaleString()}{unit}更新完了 <span className={d.ng ? 'font-medium text-[#e5484d]' : ''}>{d.ng.toLocaleString()}件失敗</span>しました</span>
               ) : <span className="shrink-0 text-muted">データなし</span>}
             </li>
           )
