@@ -19,6 +19,32 @@ function Row({ s, nested }: { s: Svc; nested?: boolean }) {
   )
 }
 
+type CronStat = { ok: number; ng: number; skip: number; runs: number; last: string }
+const CRONS: [string, string][] = [['records', 'レコード全件更新'], ['records-today', '今日のレコード更新'], ['users', 'ユーザー情報更新']]
+
+function CronCard() {
+  const { data } = useApi<Record<string, CronStat>>('/api/cron')
+  if (!data) return null
+  return (
+    <Card className="mt-6 overflow-hidden">
+      <div className="border-b border-line px-4 py-3 text-sm font-medium">定期更新(過去24時間)</div>
+      <ul className="divide-y divide-line">
+        {CRONS.map(([k, label]) => {
+          const d = data[k], total = d ? d.ok + d.ng : 0
+          return (
+            <li key={k} className="flex items-center justify-between gap-3 px-4 py-3 text-sm">
+              <span className="truncate">{label}</span>
+              {d && total ? (
+                <span className="tnum shrink-0 text-muted">{total.toLocaleString()}件中 <span className={d.ng ? 'font-medium text-[#e5484d]' : ''}>{d.ng.toLocaleString()}件失敗</span></span>
+              ) : <span className="shrink-0 text-muted">データなし</span>}
+            </li>
+          )
+        })}
+      </ul>
+    </Card>
+  )
+}
+
 export default function Overview() {
   const { data, err } = useApi<{ overall: St; services: Svc[]; generatedAt: string }>('/api/status?days=60')
   useEffect(() => { document.title = 'ステータス - おはツイKeeper' }, [])
@@ -63,6 +89,7 @@ export default function Overview() {
           )
         })}
       </Card>
+      <CronCard />
       <p className="mt-3 text-center text-xs text-muted">直近60日の稼働率。各バーにカーソルを合わせると日ごとの内訳が見られます。</p>
     </>
   )

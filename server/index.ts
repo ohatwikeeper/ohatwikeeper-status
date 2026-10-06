@@ -57,6 +57,19 @@ app.get('/api/incidents/:id', async (c) => {
   return c.json({ ...i, service: pub(s), timeline: await incidentChecks(i) })
 })
 
+// 本体の cron(過去24時間の成功/失敗)を取得して返す。本体が落ちていても status は動かす
+const CRON_URL = process.env.CRON_STATS_URL ?? 'https://ohatwikeeper.com/app-api/cron-stats'
+let cronCache: { at: number; data: unknown } | null = null
+app.get('/api/cron', async (c) => {
+  if (!cronCache || Date.now() - cronCache.at > 60_000) {
+    try {
+      const r = await fetch(CRON_URL, { signal: AbortSignal.timeout(5000) })
+      if (!r.ok) throw new Error(String(r.status))
+      cronCache = { at: Date.now(), data: await r.json() }
+    } catch { return c.json(cronCache?.data ?? {}) }
+  }
+  return c.json(cronCache.data)
+})
 app.get('/healthz', (c) => c.text('ok'))
 app.use('/*', serveStatic({ root: './dist' }))
 const index = () => (fs.existsSync('./dist/index.html') ? fs.readFileSync('./dist/index.html', 'utf8') : 'build required')
