@@ -11,3 +11,6 @@
 
 ## 本番
 `npm run build` → `dist/` と `dist-server/` を配置し `npm ci --omit=dev`、`npm start`(ポート 3120)。
+
+## ライセンス
+閲覧のみ許可します。詳細は [LICENSE](./LICENSE)。
